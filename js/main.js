@@ -4,6 +4,7 @@ var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
 $.getJSON(apiUrl, function(data) {
   $.each(data.gms, function(index, obj) {
     //console.log(obj);
+    var htmlResult = $(".js-result");
     var teamName = "Jaguars";
     var homeTeam = obj.hnn;
     var awayTeam = obj.vnn;
@@ -18,13 +19,13 @@ $.getJSON(apiUrl, function(data) {
     } else {}
     // Check scores & assign results
     if (isHome == true && winnerHome == true) {
-      $(".result").html("Wow. They actually won.");
+      $(htmlResult).html("Wow. They actually won.");
     } else if (isHome == true && winnerHome == false) {
-      $(".result").html("Nope.");
+      $(htmlResult).html("No sir.");
     } else if (isHome == false && winnerHome == true) {
-      $(".result").html("Nope.");
+      $(htmlResult).html("Nope.");
     } else if (isHome == false && winnerHome == false) {
-      $(".result").html("Yes. They won on the road. Impressive.");
+      $(htmlResult).html("Yes. They won on the road. Impressive.");
     } else {
       //
     }
