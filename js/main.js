@@ -1,6 +1,6 @@
 /* Get Data from NFL LiveUpdate */
 //var apiUrl = "{{ site.baseurl }}/js/data-sample.json";
-var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
+var apiUrl = "//www.nfl.com/liveupdate/scorestrip/ss.json";
 $.getJSON(apiUrl, function(data) {
   $.each(data.gms, function(index, obj) {
     //console.log(obj);
