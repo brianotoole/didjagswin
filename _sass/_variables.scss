@@ -1,8 +1,8 @@
 // Variables
 // colors - brand
 $color-body: #0c0c0c;
-$color-primary: #1abc9c; //turquoise
-$color-secondary:  #fff8e8; //gold
+$color-primary: #006272; //teal
+$color-secondary:  #9A7611; //gold
 $color-primary-dark: darken($color-primary, 7%);
 $color-secondary-dark: darken($color-secondary, 7%);
 
@@ -10,6 +10,11 @@ $color-secondary-dark: darken($color-secondary, 7%);
 $color-border: #555;
 $color-link: $color-primary-dark;
 $color-link-dark: darken($color-primary-dark, 7%);
+
+// colors - others
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #555;
 
 // measurements - relative sizings of fonts in %
 $font-size-default: 100%; //1em = 16px
@@ -24,23 +29,6 @@ $bp-lg: calc-em(960px);
 $bp-xl: calc-em(1280px); 
 
 // fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Open+Sans:300,400,700');
 $font-primary: "Open Sans", serif; //body
-$font-secondary: "Montserrat", sans-serif; //headings
-
-
-// Calculate ems from pixels
-
-// Usage: calc-em(16px);
-// Strip units from values
-@function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
-}
-@function calc-em($px, $base: 16) {
-	$px: strip-unit($px);
-	$base: strip-unit($base);
-	@if $px == 1 {
-		@return 1px;
-	}
-	@return ($px / $base) * 1em;
-}
+$font-secondary: "Oswald", sans-serif; //headings

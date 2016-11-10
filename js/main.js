@@ -1,3 +1,4 @@
+/* Get Data from NFL LiveUpdate */
 //var apiUrl = "{{ site.baseurl }}/js/data-sample.json";
 var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
 $.getJSON(apiUrl, function(data) {
@@ -29,3 +30,5 @@ $.getJSON(apiUrl, function(data) {
     }
   })
 });
+/* End */
+
