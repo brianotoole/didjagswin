@@ -29,6 +29,6 @@ $bp-lg: calc-em(960px);
 $bp-xl: calc-em(1280px); 
 
 // fonts
-@import url('https://fonts.googleapis.com/css?family=Oswald|Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,700|Open+Sans');
 $font-primary: "Open Sans", serif; //body
 $font-secondary: "Oswald", sans-serif; //headings
