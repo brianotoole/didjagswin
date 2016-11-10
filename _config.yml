@@ -1,5 +1,5 @@
 title: Did the Jacksonville Jaguars Win?
-email: me@didjagswin.com
+email: hello@didjagswin.com
 author: Brian OToole
 description: #
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -15,7 +15,7 @@ sass:
   compressed: true
   
 gems:
-  - jekyll-feed
+  #- jekyll-feed
   
 exclude:
   - Gemfile
