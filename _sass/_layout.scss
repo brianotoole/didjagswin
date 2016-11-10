@@ -1,0 +1,24 @@
+.header,
+.footer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background: transparent;
+  color: $color-white;
+  text-align: center;
+  padding: calc-em(20px);
+  z-index: 200;
+  a {
+	color: $color-white;
+  }
+}
+
+.header {
+  top: 0;
+  border-bottom: rgba($color-black, 0.25);
+}
+
+.footer {
+  bottom: 0;
+  background: $color-gray;
+}

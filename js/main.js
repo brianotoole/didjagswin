@@ -18,13 +18,13 @@ $.getJSON(apiUrl, function(data) {
     } else {}
     // Check scores & assign results
     if (isHome == true && winnerHome == true) {
-      $(".result").html("won at home");
+      $(".result").html("Wow. They actually won.");
     } else if (isHome == true && winnerHome == false) {
-      $(".result").html("lost at home");
+      $(".result").html("Nope.");
     } else if (isHome == false && winnerHome == true) {
-      $(".result").html("lost at away");
+      $(".result").html("Nope.");
     } else if (isHome == false && winnerHome == false) {
-      $(".result").html("won at away");
+      $(".result").html("Yes. They won on the road. Impressive.");
     } else {
       //
     }
