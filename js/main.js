@@ -24,13 +24,13 @@ $.getJSON(apiUrl, function(data) {
     if (isHome == true && isCurrentWeek == true || isHome == false && isCurrentWeek == true) {
       $(htmlResult).html("We'll find out this week against the " + opposingTeamName + ".");
     } else if (isHome == true && winnerHome == true) {
-      $(htmlResult).html("Wow. Yes, they actually won.");
+      $(htmlResult).html("Wow. Yes, they actually won against the " + opposingTeamName + ".");
     } else if (isHome == true && winnerHome == false) {
-      $(htmlResult).html("Not this time.");
+      $(htmlResult).html("Not this time. Lost to the " + opposingTeamName + ".");
     } else if (isHome == false && winnerHome == true) {
-      $(htmlResult).html("Nope.");
+      $(htmlResult).html("Nope. Lost to the " + opposingTeamName + ".");
     } else if (isHome == false && winnerHome == false) {
-      $(htmlResult).html("Yes. They won on the road. Impressive.");
+      $(htmlResult).html("Yes. They won on the road against the " + opposingTeamName + ".");
     } else {
       //
     }
