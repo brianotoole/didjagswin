@@ -16,6 +16,7 @@
   transition: 0.25s all ease-out;
   @media (min-width: $bp-md) {
     display: inline-block;
+    margin-top: 0;
     margin-bottom: 0;
   }
   &:hover,
