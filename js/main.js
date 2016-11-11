@@ -15,12 +15,14 @@ $.getJSON(apiUrl, function(data) {
     // Set home or away team
     if (homeTeam == teamName) {
       var isHome = true;
+      var opposingTeamName = obj.vnn;
     } else if (awayTeam == teamName) {
       var isHome = false;
+      var opposingTeamName = obj.hnn;
     } else {}
     // Check scores & assign results
     if (isHome == true && isCurrentWeek == true || isHome == false && isCurrentWeek == true) {
-      $(htmlResult).html("We'll find out this week against the " + awayTeam + ".");
+      $(htmlResult).html("We'll find out this week against the " + opposingTeamName + ".");
     } else if (isHome == true && winnerHome == true) {
       $(htmlResult).html("Wow. Yes, they actually won.");
     } else if (isHome == true && winnerHome == false) {
