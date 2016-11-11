@@ -1,6 +1,6 @@
 /* Get Data from NFL LiveUpdate */
-//var apiUrl = "{{ site.baseurl }}/js/data-sample.json";
-var apiUrl = "//www.nfl.com/liveupdate/scorestrip/ss.json";
+//var apiUrl = "/js/sample-data.json";
+var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
 $.getJSON(apiUrl, function(data) {
   $.each(data.gms, function(index, obj) {
     //console.log(obj);
@@ -11,6 +11,7 @@ $.getJSON(apiUrl, function(data) {
     var scoreHome = obj.hs;
     var scoreAway = obj.vs;
     var winnerHome = (scoreHome > scoreAway);
+    var isCurrentWeek = (scoreHome == scoreAway);
     // Set home or away team
     if (homeTeam == teamName) {
       var isHome = true;
@@ -18,10 +19,12 @@ $.getJSON(apiUrl, function(data) {
       var isHome = false;
     } else {}
     // Check scores & assign results
-    if (isHome == true && winnerHome == true) {
-      $(htmlResult).html("Wow. They actually won.");
+    if (isHome == true && isCurrentWeek == true || isHome == false && isCurrentWeek == true) {
+      $(htmlResult).html("We'll find out soon. They play the " + awayTeam + ".");
+    } else if (isHome == true && winnerHome == true) {
+      $(htmlResult).html("Wow. Yes, they actually won.");
     } else if (isHome == true && winnerHome == false) {
-      $(htmlResult).html("No sir.");
+      $(htmlResult).html("Not this time.");
     } else if (isHome == false && winnerHome == true) {
       $(htmlResult).html("Nope.");
     } else if (isHome == false && winnerHome == false) {
