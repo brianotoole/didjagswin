@@ -20,7 +20,7 @@ $.getJSON(apiUrl, function(data) {
     } else {}
     // Check scores & assign results
     if (isHome == true && isCurrentWeek == true || isHome == false && isCurrentWeek == true) {
-      $(htmlResult).html("We'll find out soon. They play the " + awayTeam + ".");
+      $(htmlResult).html("We'll find out this week against the " + awayTeam + ".");
     } else if (isHome == true && winnerHome == true) {
       $(htmlResult).html("Wow. Yes, they actually won.");
     } else if (isHome == true && winnerHome == false) {
