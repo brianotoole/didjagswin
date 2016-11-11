@@ -16,7 +16,16 @@ sass:
   
 gems:
   #- jekyll-feed
-  
-exclude:
-  - Gemfile
-  - Gemfile.lock
+ 
+# Files in this repo that we don't want to go to the web 
+exclude: [
+  'scss',
+  '*.rb',
+  '*.yml', 
+  'vendor', 
+  'Gemfile', 
+  'Gemfile.lock',
+  '*.sh',
+  'README.md',
+  'LICENSE.md',
+]
