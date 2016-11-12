@@ -73,9 +73,13 @@
   left: 0;
   width: 100%;
   text-align: center;
-  transform: translate(0%, -45%);
-  -webkit-transform: translate(0%, -45%);
-  overflow: hidden;
+  transform: translate(0%, -100%);
+  -webkit-transform: translate(0%, -100%);
+  @media (min-width: $bp-md) {
+    transform: translate(0%, -45%);
+    -webkit-transform: translate(0%, -45%);
+    overflow: hidden;
+  }
 }
 // the result of the score
 .js-result {
