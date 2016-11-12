@@ -1,10 +1,15 @@
 /* Get Data from NFL LiveUpdate */
-//var apiUrl = "/js/sample-data.json";
-var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
+$(function() {
+
+var loader = $(".loading-result");
+$(loader).show();
+
+var apiUrl = "/js/sample-data.json";
+//var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
 $.getJSON(apiUrl, function(data) {
   $.each(data.gms, function(index, obj) {
     //console.log(obj);
-    var htmlResult = $(".js-result");
+    var htmlEl = $(".js-result");
     var teamName = "Jaguars";
     var homeTeam = obj.hnn;
     var awayTeam = obj.vnn;
@@ -12,6 +17,7 @@ $.getJSON(apiUrl, function(data) {
     var scoreAway = obj.vs;
     var winnerHome = (scoreHome > scoreAway);
     var isCurrentWeek = (scoreHome == scoreAway);
+ 
     // Set home or away team
     if (homeTeam == teamName) {
       var isHome = true;
@@ -21,20 +27,32 @@ $.getJSON(apiUrl, function(data) {
       var opposingTeamName = obj.hnn;
     } else {}
     // Check scores & assign results
+    var htmlResult;
     if (isHome == true && isCurrentWeek == true || isHome == false && isCurrentWeek == true) {
-      $(htmlResult).html("We'll find out this week against the " + opposingTeamName + ".");
+      htmlResult = "We'll find out this week vs. the " + opposingTeamName + ".";
+      //$(htmlResult).html("We'll find out this week against the " + opposingTeamName + ".");
     } else if (isHome == true && winnerHome == true) {
-      $(htmlResult).html("Wow. Yes, they actually won against the " + opposingTeamName + ".");
+      htmlResult = "Wow. Yes, they actually beat the " + opposingTeamName + ".";
+      //$(htmlResult).html("Wow. Yes, they actually won against the " + opposingTeamName + ".");
     } else if (isHome == true && winnerHome == false) {
-      $(htmlResult).html("Not this time. Lost to the " + opposingTeamName + ".");
+      htmlResult = "LOL, No. Lost to the " + opposingTeamName + ".";
+      //$(htmlResult).html("Not this time. Lost to the " + opposingTeamName + ".");
     } else if (isHome == false && winnerHome == true) {
-      $(htmlResult).html("Nope. Lost to the " + opposingTeamName + ".");
+      htmlResult = "No, sir. Lost to the " + opposingTeamName + ".";
+      //$(htmlResult).html("Nope. Lost to the " + opposingTeamName + ".");
     } else if (isHome == false && winnerHome == false) {
-      $(htmlResult).html("Yes. They won on the road against the " + opposingTeamName + ".");
+      htmlResult = "OMG, Yes. They won on the road vs. the " + opposingTeamName + ".";
+      //$(htmlResult).html("Yes. They won on the road against the " + opposingTeamName + ".");
     } else {
       //
     }
+    setTimeout(function () {
+      $(loader).hide();
+      $(htmlEl).html(htmlResult);
+    }, 2500);
   })
+});
+
 });
 /* End */
 
