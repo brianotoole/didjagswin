@@ -23,6 +23,9 @@
   background: $color-gray;
 }
 
+// links
+.link-underline {text-decoration: underline;}
+
 // pads
 .pad-left-0 {
   @media (min-width: $bp-md) { padding-left: 0;}
