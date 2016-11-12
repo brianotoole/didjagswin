@@ -4,13 +4,13 @@ $(function() {
 var loader = $(".loading-result");
 $(loader).show();
 
-var apiUrl = "/js/sample-data.json";
-//var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
+//var apiUrl = "/js/sample-data.json";
+var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
 $.getJSON(apiUrl, function(data) {
   $.each(data.gms, function(index, obj) {
     //console.log(obj);
     var htmlEl = $(".js-result");
-    var teamName = "Jaguars";
+    var teamName = "Jaguars";//chagne to get team
     var homeTeam = obj.hnn;
     var awayTeam = obj.vnn;
     var scoreHome = obj.hs;
@@ -30,19 +30,14 @@ $.getJSON(apiUrl, function(data) {
     var htmlResult;
     if (isHome == true && isCurrentWeek == true || isHome == false && isCurrentWeek == true) {
       htmlResult = "We'll find out this week vs. the " + opposingTeamName + ".";
-      //$(htmlResult).html("We'll find out this week against the " + opposingTeamName + ".");
     } else if (isHome == true && winnerHome == true) {
       htmlResult = "Wow. Yes, they actually beat the " + opposingTeamName + ".";
-      //$(htmlResult).html("Wow. Yes, they actually won against the " + opposingTeamName + ".");
     } else if (isHome == true && winnerHome == false) {
       htmlResult = "LOL, No. Lost to the " + opposingTeamName + ".";
-      //$(htmlResult).html("Not this time. Lost to the " + opposingTeamName + ".");
     } else if (isHome == false && winnerHome == true) {
-      htmlResult = "No, sir. Lost to the " + opposingTeamName + ".";
-      //$(htmlResult).html("Nope. Lost to the " + opposingTeamName + ".");
+      htmlResult = "Nope. Lost to the " + opposingTeamName + ".";
     } else if (isHome == false && winnerHome == false) {
       htmlResult = "OMG, Yes. They won on the road vs. the " + opposingTeamName + ".";
-      //$(htmlResult).html("Yes. They won on the road against the " + opposingTeamName + ".");
     } else {
       //
     }
@@ -75,4 +70,27 @@ $.getJSON(apiUrl, function(data) {
   }
 
 })();
+/* End */
+
+/* Full-screen nav toggle */
+$(document).ready(function() {
+  var trigger = $('.i-menu a'),
+    isClosed = false;
+  trigger.click(function() {
+    hamburger_cross();
+  });
+
+  function hamburger_cross() {
+    if (isClosed == true) {
+      trigger.removeClass('active');
+      isClosed = false;
+    } else {
+      trigger.addClass('active');
+      isClosed = true;
+    }
+  }
+  $(trigger).click(function() {
+    $('.menu-wrapper').toggleClass('open');
+  });
+});
 /* End */

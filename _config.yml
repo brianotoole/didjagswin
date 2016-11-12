@@ -3,9 +3,14 @@ email: hello@didjagswin.com
 author: Brian OToole
 description: #
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+current_team: Jaguars
+url: http://didjagswin.com # the base hostname & protocol for your site, e.g. http://example.com
+url_jags: http://didjagswin.com
+url_browns: http://didbrownswin.com
+url_bucs: http://didbucswin.com
+url_dolphins: http://didphinswin.com
+twitter_username: brianotoole
+github_username:  brianotoole
 
 # Build settings
 markdown: kramdown

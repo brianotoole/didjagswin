@@ -1,8 +1,8 @@
 // Variables
-// colors - brand
+// colors - brand (Jags)
 $color-body: #0c0c0c;
-$color-primary: #006272; //teal
-$color-secondary:  #9A7611; //gold
+$color-primary: #006272; //jags teal
+$color-secondary:  #9A7611; //jags gold
 $color-primary-dark: darken($color-primary, 7%);
 $color-secondary-dark: darken($color-secondary, 7%);
 
@@ -15,6 +15,16 @@ $color-link-dark: darken($color-primary-dark, 7%);
 $color-white: #fff;
 $color-black: #000;
 $color-gray: #555;
+
+// colors - teams
+$color-primary-browns: #FE3C00; //browns orange
+$color-secondary-browns: #26201E; //browns brown (no pun intended)
+$color-primary-bucs: #D60A0B; //bucs red
+$color-secondary-bucs: #89765F; //bucs gold
+$color-primary-dolphins: #008D97; //dolphins aqua
+$color-secondary-dolphins: #F5811F; //dolphins orange
+$color-primary-jags: #006272; //jags teal
+$color-secondary-jags: #9A7611; //jags gold
 
 // measurements - relative sizings of fonts in %
 $font-size-default: 100%; //1em = 16px
