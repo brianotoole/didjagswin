@@ -32,6 +32,7 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
 h1,
 .h1 {
   font-size: calc-em(32px);
+  font-weight: 700;
   padding-top: 0.5em;
   @media (min-width: $bp-md) {
     font-size: calc-em(56px);
