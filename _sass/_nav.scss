@@ -119,14 +119,17 @@
   transition: all 0.2s;
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  &.bears {
-	background: $color-primary-bears;
-  }
   &.browns {
 	background: $color-primary-browns;
   }
   &.bucs {
 	background: $color-primary-bucs;
+  }
+  &.dolphins {
+	background: $color-primary-dolphins;
+  }
+  &.jags {
+	background: $color-primary-jags;
   }
 }
 .menu-list li a {
