@@ -38,9 +38,9 @@ $.getJSON(apiUrl, function(data) {
     } else if (isHome == true && winnerHome == true) {
       htmlResult = "Wow. Yes, they actually beat the " + opposingTeamName + ".";
     } else if (isHome == true && winnerHome == false) {
-      htmlResult = "LOL, No. Lost to the " + opposingTeamName + ".";
+      htmlResult = "Nope. Probably too many run/pass options.";
     } else if (isHome == false && winnerHome == true) {
-      htmlResult = "Nope. Lost to the " + opposingTeamName + ".";
+      htmlResult = "Of course not. Lost to the " + opposingTeamName + ".";
     } else if (isHome == false && winnerHome == false) {
       htmlResult = "OMG, Yes. They won on the road vs. the " + opposingTeamName + ".";
     } else { 
