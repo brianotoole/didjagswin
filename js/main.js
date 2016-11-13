@@ -4,8 +4,8 @@ $(function() {
 var loader = $(".loading-result");
 $(loader).show();
 
-var apiUrl = "/js/sample-data.json";
-//var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
+//var apiUrl = "/js/sample-data.json";
+var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
 $.getJSON(apiUrl, function(data) {
   $.each(data.gms, function(index, obj) {
     //console.log(obj);
