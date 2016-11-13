@@ -10,7 +10,7 @@ $.getJSON(apiUrl, function(data) {
   $.each(data.gms, function(index, obj) {
     //console.log(obj);
     var htmlEl = $(".js-result");
-    var teamName = "Browns";//team
+    var teamName = "Jaguars";//team
     var homeTeam = obj.hnn;
     var awayTeam = obj.vnn;
     var scoreHome = obj.hs;
