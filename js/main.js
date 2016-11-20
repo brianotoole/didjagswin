@@ -40,7 +40,7 @@ $.getJSON(apiUrl, function(data) {
     } else if (isHome == true && winnerHome == false) {
       htmlResult = "Nope. Probably too many run/pass options.";
     } else if (isHome == false && winnerHome == true) {
-      htmlResult = "Of course not. Lost to the " + opposingTeamName + ".";
+      htmlResult = "Of course not. Gus Bradley's still the coach.";
     } else if (isHome == false && winnerHome == false) {
       htmlResult = "OMG, Yes. They won on the road vs. the " + opposingTeamName + ".";
     } else { 
