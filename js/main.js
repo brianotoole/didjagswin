@@ -44,7 +44,7 @@ $.getJSON(apiUrl, function(data) {
     } else if (isHome == false && winnerHome == false) {
       htmlResult = "OMG, Yes. They won on the road vs. the " + opposingTeamName + ".";
     } else { 
-      //
+      htmlResult = "Finally! This miserable season is over.";
     }
     setTimeout(function () {
       $(loader).hide();
