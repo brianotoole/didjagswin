@@ -8,7 +8,7 @@ $(loader).show();
 var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
 $.getJSON(apiUrl, function(data) {
   $.each(data.gms, function(index, obj) {
-    if (!data) {
+    if (obj.length === 0) {
       console.log('error ');
     } else {
       console.log('no error');
