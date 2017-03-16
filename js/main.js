@@ -29,10 +29,9 @@ $.getJSON(apiUrl, function(data) {
     } else if (awayTeam == teamName) {
       var isHome = false;
       var opposingTeamName = obj.hnn;
+    } else if (homeTeam == "undefined") {
+      htmlResult = "Finally! This miserable season is over.";
     } else {
-      setInterval(function() {
-        htmlResult = "Finally! This miserable season is over.";
-      }, 3000);
     }
     // Check scores & assign results
     if (isHome == true && isCurrentWeek == true || isHome == false && isCurrentWeek == true) {
