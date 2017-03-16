@@ -8,6 +8,11 @@ $(loader).show();
 var apiUrl = "http://www.nfl.com/liveupdate/scorestrip/ss.json";
 $.getJSON(apiUrl, function(data) {
   $.each(data.gms, function(index, obj) {
+    if (data != null) {
+      console.log('error ');
+    } else {
+      console.log('no error');
+    }
     //console.log(obj);
     var htmlEl = $(".js-result");
     var teamName = "Jaguars";//team
@@ -29,8 +34,6 @@ $.getJSON(apiUrl, function(data) {
     } else if (awayTeam == teamName) {
       var isHome = false;
       var opposingTeamName = obj.hnn;
-    } else if (homeTeam == "undefined") {
-      htmlResult = "Finally! This miserable season is over.";
     } else {
     }
     // Check scores & assign results
@@ -47,7 +50,6 @@ $.getJSON(apiUrl, function(data) {
     } else if (isHome == false && winnerHome == false) {
       htmlResult = "OMG, Yes. They won on the road vs. the " + opposingTeamName + ".";
     } else { 
-      htmlResult = "Finally! This miserable season is over.";
     }
     setTimeout(function () {
       $(loader).hide();
