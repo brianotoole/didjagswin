@@ -30,7 +30,9 @@ $.getJSON(apiUrl, function(data) {
       var isHome = false;
       var opposingTeamName = obj.hnn;
     } else {
-      htmlResult = "Finally! This miserable season is over.";
+      setInterval(function() {
+        htmlResult = "Finally! This miserable season is over.";
+      }, 3000);
     }
     // Check scores & assign results
     if (isHome == true && isCurrentWeek == true || isHome == false && isCurrentWeek == true) {
