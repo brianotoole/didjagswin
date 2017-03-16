@@ -20,6 +20,7 @@ $.getJSON(apiUrl, function(data) {
     var winnerHome = (gameOver == true && scoreHome > scoreAway);
     var isTie = (gameOver == true && scoreHome == scoreAway);
     var isCurrentWeek = (gameOver == false);
+    var htmlResult;
  
     // Set home or away team
     if (homeTeam == teamName) {
@@ -28,9 +29,10 @@ $.getJSON(apiUrl, function(data) {
     } else if (awayTeam == teamName) {
       var isHome = false;
       var opposingTeamName = obj.hnn;
-    } else {}
+    } else {
+      htmlResult = "Finally! This miserable season is over.";
+    }
     // Check scores & assign results
-    var htmlResult;
     if (isHome == true && isCurrentWeek == true || isHome == false && isCurrentWeek == true) {
       htmlResult = "We'll find out this week vs. the " + opposingTeamName + ".";
     } else if (isTie) {
